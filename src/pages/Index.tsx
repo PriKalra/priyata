@@ -2,7 +2,7 @@ import { ExternalLink, Mic, Image as ImageIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import heroBg from "@/assets/hero-bg.jpg";
+import heroBg from "@/assets/cosmic-hero.jpg";
 
 const allContent = [
   {
@@ -100,7 +100,8 @@ const Index = () => {
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${heroBg})` }}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-primary/80 via-primary/60 to-background" />
+        <div className="absolute inset-0 bg-[image:var(--gradient-cosmic)]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-background" />
         <div className="relative container mx-auto px-4 h-full flex items-center justify-center">
           <div className="max-w-4xl mx-auto text-center text-white animate-fade-in">
             <h1 className="text-6xl md:text-8xl font-bold mb-6">
@@ -116,8 +117,8 @@ const Index = () => {
               <Button 
                 asChild
                 size="lg"
-                variant="secondary"
-                className="text-lg shadow-lg hover:shadow-xl transition-all duration-300"
+                variant="outline"
+                className="text-lg bg-white/10 hover:bg-white/20 text-white border-white/30 hover:border-white/50 backdrop-blur-sm transition-all duration-300"
               >
                 <a href="https://world.hey.com/priyata" target="_blank" rel="noopener noreferrer">
                   Hey World <ExternalLink className="ml-2 h-5 w-5" />
@@ -126,8 +127,7 @@ const Index = () => {
               <Button 
                 asChild
                 size="lg"
-                variant="accent"
-                className="text-lg transition-all duration-300"
+                className="text-lg bg-white text-black hover:bg-white/90 shadow-[var(--shadow-glow)] hover:shadow-[var(--shadow-glow)] transition-all duration-300"
               >
                 <a href="https://buymeacoffee.com/priyata" target="_blank" rel="noopener noreferrer">
                   Support My Work <ExternalLink className="ml-2 h-5 w-5" />
@@ -156,7 +156,7 @@ const Index = () => {
             return (
               <Card
                 key={index}
-                className={`group relative p-6 bg-[image:var(--gradient-card)] border-border hover:border-primary/50 transition-all duration-300 hover:shadow-[var(--shadow-card-hover)] shadow-[var(--shadow-card)] cursor-pointer overflow-hidden ${sizeClasses[item.size as keyof typeof sizeClasses]}`}
+                className={`group relative p-6 bg-[image:var(--gradient-card)] border-border hover:border-foreground/20 transition-all duration-500 hover:shadow-[var(--shadow-card-hover)] shadow-[var(--shadow-card)] cursor-pointer overflow-hidden ${sizeClasses[item.size as keyof typeof sizeClasses]}`}
               >
                 <a
                   href={item.link}
@@ -175,7 +175,7 @@ const Index = () => {
                   <div className="relative flex flex-col h-full">
                     {/* Header */}
                     <div className="flex items-center justify-between mb-3">
-                      <Badge variant="secondary" className="text-xs font-medium">
+                      <Badge variant="secondary" className="text-xs font-medium bg-secondary/50 backdrop-blur-sm">
                         {item.source}
                       </Badge>
                       {item.type === "audio" && (
@@ -190,7 +190,7 @@ const Index = () => {
                     </div>
 
                     {/* Content */}
-                    <h3 className="text-xl font-semibold mb-3 group-hover:text-primary transition-colors duration-300 line-clamp-3">
+                    <h3 className="text-xl font-semibold mb-3 group-hover:text-accent transition-colors duration-300 line-clamp-3">
                       {item.title}
                     </h3>
                     
@@ -200,7 +200,7 @@ const Index = () => {
 
                     {/* Footer */}
                     <div className="flex items-center justify-between mt-auto">
-                      <div className="flex items-center text-primary font-medium text-sm group-hover:gap-2 gap-1 transition-all duration-300">
+                      <div className="flex items-center text-accent font-medium text-sm group-hover:gap-2 gap-1 transition-all duration-300">
                         {item.type === "audio" ? "Listen" : "Read more"}
                         <ExternalLink className="h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
                       </div>
@@ -254,8 +254,7 @@ const Index = () => {
               <Button 
                 asChild
                 size="lg"
-                variant="accent"
-                className="text-lg transition-all duration-300"
+                className="text-lg bg-foreground text-background hover:bg-foreground/90 shadow-[var(--shadow-card-hover)] transition-all duration-300"
               >
                 <a href="https://buymeacoffee.com/priyata" target="_blank" rel="noopener noreferrer">
                   Buy Me a Coffee <ExternalLink className="ml-2 h-5 w-5" />

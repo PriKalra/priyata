@@ -2,7 +2,7 @@ import { ExternalLink, Mic, Image as ImageIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import heroBg from "@/assets/cosmic-hero.jpg";
+import heroBg from "@/assets/hero-bg.jpg";
 
 const allContent = [
   {

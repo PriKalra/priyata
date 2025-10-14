@@ -101,33 +101,49 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="relative overflow-hidden h-[60vh] min-h-[500px]">
-        <div 
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${heroBg})` }}
-        />
-        <div className="absolute inset-0 bg-[image:var(--gradient-cosmic)]" />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-background" />
-        <div className="relative container mx-auto px-4 h-full flex items-center justify-center">
-          <div className="max-w-4xl mx-auto text-center text-white animate-fade-in">
-            <h1 className="text-6xl md:text-8xl font-bold mb-6">
+      <section className="relative overflow-hidden border-b-2 border-border">
+        <div className="container mx-auto px-4 py-16 md:py-24">
+          <div className="max-w-4xl mx-auto text-center animate-fade-in">
+            <h1 className="text-5xl md:text-7xl font-light tracking-tight mb-6 text-foreground">
               Priyata
             </h1>
-            <p className="text-xl md:text-2xl mb-4 opacity-95">
-              State of being. The in-betweens.
+            <p className="text-xl md:text-2xl mb-3 font-normal text-muted-foreground">
+              State of Being
             </p>
-            <p className="text-lg md:text-xl opacity-90 max-w-2xl mx-auto leading-relaxed mb-8">
-              Writer • Artist • Scientist • Product Manager
+            <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed mb-10">
+              Exploring the intersection of model informed drug discovery science and the philosophy of the universe. 
+              A journey through PBPK/QSP modeling, AI in pharma, biotechnology, and the nature of consciousness.
             </p>
-            <div className="flex flex-wrap gap-3 justify-center">
+            
+            <div className="flex flex-wrap gap-3 justify-center items-center">
               <Button 
                 asChild
-                size="lg"
+                size="default"
                 variant="outline"
-                className="text-sm bg-white/5 hover:bg-white/10 text-white border-white/20 hover:border-white/40 backdrop-blur-sm transition-all"
+                className="text-sm border-border hover:bg-foreground hover:text-background transition-all"
+              >
+                <a href="https://twitter.com/DeliriusPri" target="_blank" rel="noopener noreferrer">
+                  Twitter
+                </a>
+              </Button>
+              <Button 
+                asChild
+                size="default"
+                variant="outline"
+                className="text-sm border-border hover:bg-foreground hover:text-background transition-all"
               >
                 <a href="https://world.hey.com/priyata" target="_blank" rel="noopener noreferrer">
-                  Hey World <ExternalLink className="ml-2 h-4 w-4" />
+                  Blog
+                </a>
+              </Button>
+              <Button 
+                asChild
+                size="default"
+                variant="outline"
+                className="text-sm border-border hover:bg-foreground hover:text-background transition-all"
+              >
+                <a href="https://buymeacoffee.com/priyata" target="_blank" rel="noopener noreferrer">
+                  Buy Me a Coffee
                 </a>
               </Button>
             </div>
@@ -136,11 +152,13 @@ const Index = () => {
       </section>
 
       {/* BentoBox Grid Section */}
-      <section className="container mx-auto px-4 py-12 md:py-20">
-        <h2 className="text-3xl font-bold mb-3 text-center">Latest Work</h2>
-        <p className="text-muted-foreground text-center mb-10 text-base">
-          Chronological feed from Hey World and Buy Me a Coffee
-        </p>
+      <section className="container mx-auto px-4 py-16 md:py-24">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-medium mb-3 text-foreground">Latest Writings & Insights</h2>
+          <p className="text-muted-foreground text-base">
+            Chronologically ordered posts from Hey World and Buy Me a Coffee
+          </p>
+        </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 max-w-[1400px] mx-auto auto-rows-[240px]">
           {allContent.map((item, index) => {
@@ -239,85 +257,90 @@ const Index = () => {
       </section>
 
       {/* Support Section */}
-      <section className="bg-muted/30 py-12 md:py-16 border-y border-border/50">
+      <section className="bg-foreground text-background py-16 md:py-20 rounded-2xl my-16 mx-4">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-2xl font-bold mb-3 text-center">Support My Work</h2>
-            <p className="text-sm text-muted-foreground mb-8 text-center max-w-2xl mx-auto">
-              Your support enables me to continue creating content at the intersection of science, AI, and philosophy.
+            <h2 className="text-3xl md:text-4xl font-normal mb-5 text-center">Support My Work</h2>
+            <p className="text-base text-background/80 mb-12 text-center max-w-2xl mx-auto leading-relaxed">
+              If you find value in my explorations of model informed drug discovery, AI in pharma, and the philosophy of existence, 
+              consider supporting my research and writing. Every contribution helps sustain this journey of knowledge and discovery.
             </p>
-            <div className="grid md:grid-cols-2 gap-4 max-w-2xl mx-auto">
-              {/* Buy Me a Coffee */}
-              <Card className="p-6 bg-card/50 border-border/50 hover:border-border transition-all">
-                <h3 className="text-lg font-semibold mb-2">Buy Me a Coffee</h3>
-                <p className="text-sm text-muted-foreground mb-4">
-                  Support my audio posts and creative work with a one-time contribution.
-                </p>
-                <Button 
-                  asChild
-                  className="w-full bg-foreground text-background hover:bg-foreground/90"
-                >
-                  <a href="https://buymeacoffee.com/priyata" target="_blank" rel="noopener noreferrer">
-                    Contribute <ExternalLink className="ml-2 h-4 w-4" />
-                  </a>
-                </Button>
-              </Card>
-
+            <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
               {/* Bitcoin Support */}
-              <Card className="p-6 bg-card/50 border-border/50 hover:border-border transition-all">
-                <h3 className="text-lg font-semibold mb-2">Bitcoin Support</h3>
-                <p className="text-sm text-muted-foreground mb-4">
-                  Prefer crypto? Send Bitcoin directly to support my work.
+              <Card className="p-8 bg-background/95 border-background/20 hover:border-background/40 transition-all">
+                <h3 className="text-xl font-medium mb-3 text-foreground">₿ Bitcoin</h3>
+                <p className="text-sm text-foreground/70 mb-4">
+                  Direct cryptocurrency support
                 </p>
-                <div className="bg-muted/50 p-3 rounded text-xs font-mono break-all mb-4 border border-border/30">
+                <div className="bg-foreground/10 p-4 rounded-lg text-xs font-mono break-all mb-4 border border-foreground/20 cursor-pointer hover:bg-foreground/20 transition-colors" 
+                     onClick={() => {
+                       navigator.clipboard.writeText('3BXv7zbYcFe1ocYqqC8LLwovDsMXyaHfY5');
+                     }}
+                     title="Click to copy">
                   3BXv7zbYcFe1ocYqqC8LLwovDsMXyaHfY5
                 </div>
                 <Button 
-                  asChild
                   variant="outline"
-                  className="w-full"
+                  className="w-full bg-background text-foreground hover:bg-background/90 border-foreground/20"
                   onClick={() => {
                     navigator.clipboard.writeText('3BXv7zbYcFe1ocYqqC8LLwovDsMXyaHfY5');
                   }}
                 >
-                  <button>
-                    Copy Address
-                  </button>
+                  Copy Address
                 </Button>
+                <p className="text-xs text-foreground/60 mt-4 text-center">
+                  Secure, private, and censorship-resistant
+                </p>
+              </Card>
+
+              {/* Buy Me a Coffee */}
+              <Card className="p-8 bg-background/95 border-background/20 hover:border-background/40 transition-all">
+                <h3 className="text-xl font-medium mb-3 text-foreground">☕ Buy Me a Coffee</h3>
+                <p className="text-sm text-foreground/70 mb-4">
+                  One-time or recurring support
+                </p>
+                <p className="text-sm text-foreground/70 mb-6">
+                  Quick checkout with card or PayPal
+                </p>
+                <Button 
+                  asChild
+                  className="w-full bg-background text-foreground hover:bg-background/90"
+                >
+                  <a href="https://buymeacoffee.com/priyata" target="_blank" rel="noopener noreferrer">
+                    Support on Buy Me a Coffee <ExternalLink className="ml-2 h-4 w-4" />
+                  </a>
+                </Button>
+                <p className="text-xs text-foreground/60 mt-4 text-center">
+                  Access exclusive content & updates
+                </p>
               </Card>
             </div>
             
-            {/* Shop Link */}
-            <div className="text-center mt-6">
-              <Button 
-                asChild
-                size="sm"
-                variant="ghost"
-                className="text-sm text-muted-foreground hover:text-foreground"
-              >
-                <a href="https://buymeacoffee.com/priyata/extras" target="_blank" rel="noopener noreferrer">
-                  View Shop <ExternalLink className="ml-2 h-3.5 w-3.5" />
-                </a>
-              </Button>
-            </div>
+            <p className="mt-12 text-background/70 text-center max-w-2xl mx-auto">
+              Your support enables me to dedicate more time to research, writing, and sharing insights 
+              at the intersection of science and philosophy.
+            </p>
           </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-border py-12">
+      <footer className="border-t border-border py-12 mt-16">
         <div className="container mx-auto px-4 text-center">
-          <p className="text-muted-foreground">
-            © {new Date().getFullYear()} Priyata. Exploring the in-betweens.
+          <p className="text-foreground font-medium mb-4">
+            © {new Date().getFullYear()} Priyata • State of Being
           </p>
-          <div className="flex gap-6 justify-center mt-4 text-sm text-muted-foreground">
-            <a href="https://world.hey.com/priyata" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
-              Hey World
+          <p className="text-muted-foreground mb-6 text-sm">
+            Exploring model informed drug discovery science and the philosophy of the universe
+          </p>
+          <div className="flex gap-6 justify-center text-sm">
+            <a href="https://world.hey.com/priyata" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors">
+              Hey.com Blog
             </a>
-            <a href="https://buymeacoffee.com/priyata" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
+            <a href="https://buymeacoffee.com/priyata" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors">
               Buy Me a Coffee
             </a>
-            <a href="https://twitter.com/DeliriusPri" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
+            <a href="https://twitter.com/DeliriusPri" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors">
               Twitter
             </a>
           </div>

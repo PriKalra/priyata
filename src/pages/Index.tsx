@@ -270,14 +270,14 @@ const Index = () => {
                   Prefer crypto? Send Bitcoin directly to support my work.
                 </p>
                 <div className="bg-muted/50 p-3 rounded text-xs font-mono break-all mb-4 border border-border/30">
-                  bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh
+                  3BXv7zbYcFe1ocYqqC8LLwovDsMXyaHfY5
                 </div>
                 <Button 
                   asChild
                   variant="outline"
                   className="w-full"
                   onClick={() => {
-                    navigator.clipboard.writeText('bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh');
+                    navigator.clipboard.writeText('3BXv7zbYcFe1ocYqqC8LLwovDsMXyaHfY5');
                   }}
                 >
                   <button>

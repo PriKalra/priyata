@@ -2,7 +2,7 @@ import { ExternalLink, Mic, Image as ImageIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import heroBg from "@/assets/hero-bg.jpg";
+import FractalCanvas from "@/components/FractalCanvas";
 
 const allContent = [
   {
@@ -101,62 +101,111 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="relative overflow-hidden border-b-2 border-border">
-        <div className="container mx-auto px-4 py-16 md:py-24">
-          <div className="max-w-4xl mx-auto text-center animate-fade-in">
-            <h1 className="text-5xl md:text-7xl font-light tracking-tight mb-6 text-foreground">
-              Priyata
-            </h1>
-            <p className="text-xl md:text-2xl mb-3 font-normal text-muted-foreground">
-              State of Being
-            </p>
-            <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed mb-10">
-              Exploring the intersection of model informed drug discovery science and the philosophy of the universe. 
-              A journey through PBPK/QSP modeling, AI in pharma, biotechnology, and the nature of consciousness.
-            </p>
-            
-            <div className="flex flex-wrap gap-3 justify-center items-center">
-              <Button 
-                asChild
-                size="default"
-                variant="outline"
-                className="text-sm border-border hover:bg-foreground hover:text-background transition-all"
-              >
-                <a href="https://twitter.com/DeliriusPri" target="_blank" rel="noopener noreferrer">
-                  Twitter
-                </a>
-              </Button>
-              <Button 
-                asChild
-                size="default"
-                variant="outline"
-                className="text-sm border-border hover:bg-foreground hover:text-background transition-all"
-              >
-                <a href="https://world.hey.com/priyata" target="_blank" rel="noopener noreferrer">
-                  Blog
-                </a>
-              </Button>
-              <Button 
-                asChild
-                size="default"
-                variant="outline"
-                className="text-sm border-border hover:bg-foreground hover:text-background transition-all"
-              >
-                <a href="https://buymeacoffee.com/priyata" target="_blank" rel="noopener noreferrer">
-                  Buy Me a Coffee
-                </a>
-              </Button>
-            </div>
+      <header className="relative min-h-[85vh] flex flex-col justify-center items-center text-center overflow-hidden border-b border-border bg-gradient-to-b from-gray-50 via-background to-gray-50">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,hsl(var(--gray-50))_0%,hsl(var(--background))_40%,hsl(var(--gray-50))_100%)]" />
+        <FractalCanvas />
+        
+        <div className="relative z-10 max-w-[980px] mx-auto px-6 md:px-12">
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-light tracking-tight mb-6 text-foreground opacity-0 animate-fade-in-up animate-delay-200">
+            State of Being
+          </h1>
+          <p className="text-xl md:text-2xl lg:text-3xl mb-8 font-normal text-muted-foreground opacity-0 animate-fade-in-up animate-delay-400">
+            By Priyata
+          </p>
+          <p className="text-base md:text-lg lg:text-xl text-muted-foreground max-w-[720px] mx-auto leading-relaxed mb-12 opacity-0 animate-fade-in-up animate-delay-600">
+            Pioneering research at the intersection of model informed drug discovery and the philosophy of existence. 
+            Exploring PBPK/QSP modeling, AI in pharmaceutical sciences, and the nature of consciousness.
+          </p>
+          
+          <div className="flex flex-wrap gap-4 justify-center items-center opacity-0 animate-fade-in-up animate-delay-800">
+            <Button 
+              asChild
+              size="lg"
+              variant="outline"
+              className="rounded-full border-border hover:bg-foreground hover:text-background transition-all duration-400"
+            >
+              <a href="https://twitter.com/DeliriusPri" target="_blank" rel="noopener noreferrer">
+                Twitter
+              </a>
+            </Button>
+            <Button 
+              asChild
+              size="lg"
+              variant="outline"
+              className="rounded-full border-border hover:bg-foreground hover:text-background transition-all duration-400"
+            >
+              <a href="https://world.hey.com/priyata" target="_blank" rel="noopener noreferrer">
+                Blog
+              </a>
+            </Button>
+            <Button 
+              asChild
+              size="lg"
+              variant="outline"
+              className="rounded-full border-border hover:bg-foreground hover:text-background transition-all duration-400"
+            >
+              <a href="https://buymeacoffee.com/priyata" target="_blank" rel="noopener noreferrer">
+                Buy Me a Coffee
+              </a>
+            </Button>
+            <Button 
+              asChild
+              size="lg"
+              variant="outline"
+              className="rounded-full border-border hover:bg-foreground hover:text-background transition-all duration-400"
+            >
+              <a href="#support">
+                Support
+              </a>
+            </Button>
+          </div>
+        </div>
+      </header>
+
+      {/* About Section */}
+      <section className="py-20 md:py-28 bg-gray-50 border-b border-border">
+        <div className="container mx-auto px-4 max-w-[800px] text-center">
+          <div className="text-xs uppercase tracking-widest text-muted-foreground font-semibold mb-8">
+            About
+          </div>
+          <p className="text-xl md:text-2xl lg:text-[1.375rem] leading-relaxed text-gray-700 mb-10">
+            I explore the intersection of <strong className="text-foreground font-medium">model informed drug discovery</strong> and the <strong className="text-foreground font-medium">philosophy of existence</strong>. 
+            My work spans PBPK/QSP modeling, AI in pharmaceutical sciences, and the fundamental questions of consciousness and reality. 
+            Through rigorous scientific inquiry and philosophical contemplation, I seek to understand the patterns that govern both 
+            molecular systems and the cosmos itself.
+          </p>
+          <div className="flex flex-wrap gap-3 justify-center mt-10">
+            <Badge variant="secondary" className="px-4 py-2 text-sm bg-card border border-border hover:border-gray-400 hover:text-foreground transition-all">
+              PBPK/QSP Modeling
+            </Badge>
+            <Badge variant="secondary" className="px-4 py-2 text-sm bg-card border border-border hover:border-gray-400 hover:text-foreground transition-all">
+              Pharmacometrics
+            </Badge>
+            <Badge variant="secondary" className="px-4 py-2 text-sm bg-card border border-border hover:border-gray-400 hover:text-foreground transition-all">
+              AI in Pharma
+            </Badge>
+            <Badge variant="secondary" className="px-4 py-2 text-sm bg-card border border-border hover:border-gray-400 hover:text-foreground transition-all">
+              Drug Discovery
+            </Badge>
+            <Badge variant="secondary" className="px-4 py-2 text-sm bg-card border border-border hover:border-gray-400 hover:text-foreground transition-all">
+              Systems Biology
+            </Badge>
+            <Badge variant="secondary" className="px-4 py-2 text-sm bg-card border border-border hover:border-gray-400 hover:text-foreground transition-all">
+              Philosophy of Science
+            </Badge>
+            <Badge variant="secondary" className="px-4 py-2 text-sm bg-card border border-border hover:border-gray-400 hover:text-foreground transition-all">
+              Consciousness Studies
+            </Badge>
           </div>
         </div>
       </section>
 
       {/* BentoBox Grid Section */}
-      <section className="container mx-auto px-4 py-16 md:py-24">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-medium mb-3 text-foreground">Latest Writings & Insights</h2>
-          <p className="text-muted-foreground text-base">
-            Chronologically ordered posts from Hey World and Buy Me a Coffee
+      <section className="container mx-auto px-4 py-20 md:py-28">
+        <div className="text-center mb-20 max-w-[640px] mx-auto">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-normal mb-4 text-foreground tracking-tight">Latest Insights</h2>
+          <p className="text-muted-foreground text-base md:text-lg leading-relaxed">
+            A chronological timeline of explorations in drug discovery science, computational biology, and philosophical inquiry.
           </p>
         </div>
         
@@ -171,7 +220,7 @@ const Index = () => {
             return (
               <Card
                 key={index}
-                className={`group relative p-5 bg-card/50 border-border/50 hover:border-border transition-all duration-300 hover:shadow-[var(--shadow-card-hover)] shadow-[var(--shadow-card)] cursor-pointer overflow-hidden ${sizeClasses[item.size as keyof typeof sizeClasses]}`}
+                className={`group relative p-6 md:p-8 bg-card border-border hover:border-gray-400 transition-all duration-[400ms] hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] hover:-translate-y-1 cursor-pointer overflow-hidden rounded-2xl before:absolute before:top-0 before:left-0 before:right-0 before:h-[3px] before:bg-foreground before:scale-x-0 before:origin-left before:transition-transform before:duration-400 hover:before:scale-x-100 ${sizeClasses[item.size as keyof typeof sizeClasses]}`}
               >
                 <a
                   href={item.link}
@@ -257,66 +306,91 @@ const Index = () => {
       </section>
 
       {/* Support Section */}
-      <section className="bg-foreground text-background py-16 md:py-20 rounded-2xl my-16 mx-4">
-        <div className="container mx-auto px-4">
+      <section id="support" className="bg-foreground text-background py-20 md:py-28 my-16 mx-4 rounded-3xl">
+        <div className="container mx-auto px-4 md:px-12">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-normal mb-5 text-center">Support My Work</h2>
-            <p className="text-base text-background/80 mb-12 text-center max-w-2xl mx-auto leading-relaxed">
-              If you find value in my explorations of model informed drug discovery, AI in pharma, and the philosophy of existence, 
-              consider supporting my research and writing. Every contribution helps sustain this journey of knowledge and discovery.
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-light mb-6 text-center tracking-tight">Support Independent Research</h2>
+            <p className="text-base md:text-lg lg:text-xl text-background/80 mb-16 text-center max-w-[680px] mx-auto leading-relaxed">
+              Your contribution enables continued exploration at the frontiers of drug discovery science and consciousness studies. 
+              Every supporter becomes part of this journey toward deeper understanding.
             </p>
-            <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+            <div className="grid md:grid-cols-2 gap-8 max-w-[1000px] mx-auto">
               {/* Bitcoin Support */}
-              <Card className="p-8 bg-background/95 border-background/20 hover:border-background/40 transition-all">
-                <h3 className="text-xl font-medium mb-3 text-foreground">₿ Bitcoin</h3>
-                <p className="text-sm text-foreground/70 mb-4">
-                  Direct cryptocurrency support
+              <Card className="p-10 md:p-12 bg-background/5 border-background/10 hover:border-background/20 hover:bg-background/8 hover:-translate-y-2 transition-all duration-[400ms] rounded-[20px] backdrop-blur-sm">
+                <h3 className="text-2xl font-normal mb-4 text-background">₿ Bitcoin</h3>
+                <p className="text-sm text-background/70 mb-6 leading-relaxed">
+                  Direct, decentralized support for independent research
                 </p>
-                <div className="bg-foreground/10 p-4 rounded-lg text-xs font-mono break-all mb-4 border border-foreground/20 cursor-pointer hover:bg-foreground/20 transition-colors" 
-                     onClick={() => {
-                       navigator.clipboard.writeText('3BXv7zbYcFe1ocYqqC8LLwovDsMXyaHfY5');
-                     }}
-                     title="Click to copy">
+                <div 
+                  className="bg-[rgba(0,0,0,0.3)] p-5 rounded-xl text-xs font-mono break-all my-6 border border-background/10 cursor-pointer hover:bg-[rgba(0,0,0,0.4)] hover:border-background/20 transition-all duration-300" 
+                  onClick={() => {
+                    navigator.clipboard.writeText('3BXv7zbYcFe1ocYqqC8LLwovDsMXyaHfY5');
+                  }}
+                  title="Click to copy"
+                >
                   3BXv7zbYcFe1ocYqqC8LLwovDsMXyaHfY5
                 </div>
                 <Button 
                   variant="outline"
-                  className="w-full bg-background text-foreground hover:bg-background/90 border-foreground/20"
+                  size="lg"
+                  className="w-full bg-background text-foreground hover:bg-background/90 hover:scale-105 border-none rounded-full font-semibold transition-all duration-300"
                   onClick={() => {
                     navigator.clipboard.writeText('3BXv7zbYcFe1ocYqqC8LLwovDsMXyaHfY5');
                   }}
                 >
                   Copy Address
                 </Button>
-                <p className="text-xs text-foreground/60 mt-4 text-center">
+                <p className="text-xs text-background/60 mt-6 text-center leading-relaxed">
                   Secure, private, and censorship-resistant
                 </p>
               </Card>
 
               {/* Buy Me a Coffee */}
-              <Card className="p-8 bg-background/95 border-background/20 hover:border-background/40 transition-all">
-                <h3 className="text-xl font-medium mb-3 text-foreground">☕ Buy Me a Coffee</h3>
-                <p className="text-sm text-foreground/70 mb-4">
-                  One-time or recurring support
+              <Card className="p-10 md:p-12 bg-background/5 border-background/10 hover:border-background/20 hover:bg-background/8 hover:-translate-y-2 transition-all duration-[400ms] rounded-[20px] backdrop-blur-sm">
+                <h3 className="text-2xl font-normal mb-4 text-background">☕ Buy Me a Coffee</h3>
+                <p className="text-sm text-background/70 mb-3 leading-relaxed">
+                  One-time or recurring support with instant checkout
                 </p>
-                <p className="text-sm text-foreground/70 mb-6">
+                <p className="text-sm text-background/70 mb-6 leading-relaxed">
                   Quick checkout with card or PayPal
                 </p>
                 <Button 
                   asChild
-                  className="w-full bg-background text-foreground hover:bg-background/90"
+                  size="lg"
+                  className="w-full bg-background text-foreground hover:bg-background/90 hover:scale-105 border-none rounded-full font-semibold transition-all duration-300"
                 >
                   <a href="https://buymeacoffee.com/priyata" target="_blank" rel="noopener noreferrer">
-                    Support on Buy Me a Coffee <ExternalLink className="ml-2 h-4 w-4" />
+                    Support Now
                   </a>
                 </Button>
-                <p className="text-xs text-foreground/60 mt-4 text-center">
-                  Access exclusive content & updates
+                <p className="text-xs text-background/60 mt-6 text-center leading-relaxed">
+                  Access exclusive insights and early research
                 </p>
               </Card>
             </div>
+
+            <div className="grid md:grid-cols-3 gap-12 mt-20 pt-20 border-t border-background/10">
+              <div className="text-center">
+                <h4 className="text-lg md:text-xl font-medium mb-3 text-background">Advance Scientific Understanding</h4>
+                <p className="text-sm md:text-[0.9375rem] text-background/70 leading-relaxed">
+                  Your support funds rigorous research in computational pharmacology and systems biology
+                </p>
+              </div>
+              <div className="text-center">
+                <h4 className="text-lg md:text-xl font-medium mb-3 text-background">Independent Inquiry</h4>
+                <p className="text-sm md:text-[0.9375rem] text-background/70 leading-relaxed">
+                  Contributions enable unfettered exploration at the intersection of science and philosophy
+                </p>
+              </div>
+              <div className="text-center">
+                <h4 className="text-lg md:text-xl font-medium mb-3 text-background">Knowledge Sharing</h4>
+                <p className="text-sm md:text-[0.9375rem] text-background/70 leading-relaxed">
+                  All findings and insights are shared openly with the scientific community
+                </p>
+              </div>
+            </div>
             
-            <p className="mt-12 text-background/70 text-center max-w-2xl mx-auto">
+            <p className="mt-10 text-background/70 text-center max-w-2xl mx-auto text-sm md:text-base">
               Your support enables me to dedicate more time to research, writing, and sharing insights 
               at the intersection of science and philosophy.
             </p>
@@ -325,17 +399,11 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-border py-12 mt-16">
+      <footer className="bg-gray-50 border-t border-border py-16 md:py-20 mt-16">
         <div className="container mx-auto px-4 text-center">
-          <p className="text-foreground font-medium mb-4">
-            © {new Date().getFullYear()} Priyata • State of Being
-          </p>
-          <p className="text-muted-foreground mb-6 text-sm">
-            Exploring model informed drug discovery science and the philosophy of the universe
-          </p>
-          <div className="flex gap-6 justify-center text-sm">
+          <div className="flex gap-8 justify-center mb-8 flex-wrap text-sm md:text-[0.9375rem]">
             <a href="https://world.hey.com/priyata" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors">
-              Hey.com Blog
+              Blog
             </a>
             <a href="https://buymeacoffee.com/priyata" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors">
               Buy Me a Coffee
@@ -343,7 +411,16 @@ const Index = () => {
             <a href="https://twitter.com/DeliriusPri" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors">
               Twitter
             </a>
+            <a href="#support" className="text-muted-foreground hover:text-foreground transition-colors">
+              Support
+            </a>
           </div>
+          <p className="text-muted-foreground text-xs md:text-sm mb-3">
+            © {new Date().getFullYear()} Priyata • State of Being
+          </p>
+          <p className="text-muted-foreground/70 text-xs md:text-sm">
+            Model Informed Drug Discovery • Consciousness Studies • Independent Research
+          </p>
         </div>
       </footer>
     </div>

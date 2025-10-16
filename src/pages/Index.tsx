@@ -113,8 +113,7 @@ const Index = () => {
             By Priyata
           </p>
           <p className="text-base md:text-lg lg:text-xl text-muted-foreground max-w-[720px] mx-auto leading-relaxed mb-12 opacity-0 animate-fade-in-up animate-delay-600">
-            Pioneering research at the intersection of model informed drug discovery and the philosophy of existence. 
-            Exploring PBPK/QSP modeling, AI in pharmaceutical sciences, and the nature of consciousness.
+            A real-time journey of an ordinary scientist who loves philosophy and product
           </p>
           
           <div className="flex flex-wrap gap-4 justify-center items-center opacity-0 animate-fade-in-up animate-delay-800">

@@ -110,7 +110,7 @@ const Index = () => {
             State of Being
           </h1>
           <p className="text-xl md:text-2xl lg:text-3xl mb-8 font-normal text-muted-foreground opacity-0 animate-fade-in-up animate-delay-400">
-            By Priyata
+            Priyata
           </p>
           <p className="text-base md:text-lg lg:text-xl text-muted-foreground max-w-[720px] mx-auto leading-relaxed mb-12 opacity-0 animate-fade-in-up animate-delay-600">
             A real-time journey of an ordinary scientist who loves philosophy and product
@@ -321,7 +321,7 @@ const Index = () => {
                   Direct, decentralized support for independent research
                 </p>
                 <div 
-                  className="bg-[rgba(0,0,0,0.3)] p-5 rounded-xl text-xs font-mono break-all my-6 border border-background/10 cursor-pointer hover:bg-[rgba(0,0,0,0.4)] hover:border-background/20 transition-all duration-300" 
+                  className="bg-[rgba(0,0,0,0.3)] p-5 rounded-xl text-xs font-mono break-all my-6 border border-background/10 cursor-pointer hover:bg-[rgba(0,0,0,0.4)] hover:border-background/20 transition-all duration-300 text-white" 
                   onClick={() => {
                     navigator.clipboard.writeText('3BXv7zbYcFe1ocYqqC8LLwovDsMXyaHfY5');
                   }}
@@ -367,32 +367,6 @@ const Index = () => {
                 </p>
               </Card>
             </div>
-
-            <div className="grid md:grid-cols-3 gap-12 mt-20 pt-20 border-t border-background/10">
-              <div className="text-center">
-                <h4 className="text-lg md:text-xl font-medium mb-3 text-background">Advance Scientific Understanding</h4>
-                <p className="text-sm md:text-[0.9375rem] text-background/70 leading-relaxed">
-                  Your support funds rigorous research in computational pharmacology and systems biology
-                </p>
-              </div>
-              <div className="text-center">
-                <h4 className="text-lg md:text-xl font-medium mb-3 text-background">Independent Inquiry</h4>
-                <p className="text-sm md:text-[0.9375rem] text-background/70 leading-relaxed">
-                  Contributions enable unfettered exploration at the intersection of science and philosophy
-                </p>
-              </div>
-              <div className="text-center">
-                <h4 className="text-lg md:text-xl font-medium mb-3 text-background">Knowledge Sharing</h4>
-                <p className="text-sm md:text-[0.9375rem] text-background/70 leading-relaxed">
-                  All findings and insights are shared openly with the scientific community
-                </p>
-              </div>
-            </div>
-            
-            <p className="mt-10 text-background/70 text-center max-w-2xl mx-auto text-sm md:text-base">
-              Your support enables me to dedicate more time to research, writing, and sharing insights 
-              at the intersection of science and philosophy.
-            </p>
           </div>
         </div>
       </section>

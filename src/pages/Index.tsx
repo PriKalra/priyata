@@ -167,35 +167,14 @@ const Index = () => {
           <div className="text-xs uppercase tracking-widest text-muted-foreground font-semibold mb-8">
             About
           </div>
-          <p className="text-xl md:text-2xl lg:text-[1.375rem] leading-relaxed text-gray-700 mb-10">
-            I explore the intersection of <strong className="text-foreground font-medium">model informed drug discovery</strong> and the <strong className="text-foreground font-medium">philosophy of existence</strong>. 
+          <p className="text-2xl md:text-3xl lg:text-4xl leading-relaxed text-gray-700 mb-6 font-light">
+            I explore the intersection of <strong className="text-foreground font-normal">model informed drug discovery</strong> and the <strong className="text-foreground font-normal">philosophy of existence</strong>. 
+          </p>
+          <p className="text-xl md:text-2xl leading-relaxed text-gray-600 font-light">
             My work spans PBPK/QSP modeling, AI in pharmaceutical sciences, and the fundamental questions of consciousness and reality. 
             Through rigorous scientific inquiry and philosophical contemplation, I seek to understand the patterns that govern both 
             molecular systems and the cosmos itself.
           </p>
-          <div className="flex flex-wrap gap-3 justify-center mt-10">
-            <Badge variant="secondary" className="px-4 py-2 text-sm bg-card border border-border hover:border-gray-400 hover:text-foreground transition-all">
-              PBPK/QSP Modeling
-            </Badge>
-            <Badge variant="secondary" className="px-4 py-2 text-sm bg-card border border-border hover:border-gray-400 hover:text-foreground transition-all">
-              Pharmacometrics
-            </Badge>
-            <Badge variant="secondary" className="px-4 py-2 text-sm bg-card border border-border hover:border-gray-400 hover:text-foreground transition-all">
-              AI in Pharma
-            </Badge>
-            <Badge variant="secondary" className="px-4 py-2 text-sm bg-card border border-border hover:border-gray-400 hover:text-foreground transition-all">
-              Drug Discovery
-            </Badge>
-            <Badge variant="secondary" className="px-4 py-2 text-sm bg-card border border-border hover:border-gray-400 hover:text-foreground transition-all">
-              Systems Biology
-            </Badge>
-            <Badge variant="secondary" className="px-4 py-2 text-sm bg-card border border-border hover:border-gray-400 hover:text-foreground transition-all">
-              Philosophy of Science
-            </Badge>
-            <Badge variant="secondary" className="px-4 py-2 text-sm bg-card border border-border hover:border-gray-400 hover:text-foreground transition-all">
-              Consciousness Studies
-            </Badge>
-          </div>
         </div>
       </section>
 
@@ -308,11 +287,6 @@ const Index = () => {
       <section id="support" className="bg-foreground text-background py-20 md:py-28 my-16 mx-4 rounded-3xl">
         <div className="container mx-auto px-4 md:px-12">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-light mb-6 text-center tracking-tight">Support Independent Research</h2>
-            <p className="text-base md:text-lg lg:text-xl text-background/80 mb-16 text-center max-w-[680px] mx-auto leading-relaxed">
-              Your contribution enables continued exploration at the frontiers of drug discovery science and consciousness studies. 
-              Every supporter becomes part of this journey toward deeper understanding.
-            </p>
             <div className="grid md:grid-cols-2 gap-8 max-w-[1000px] mx-auto">
               {/* Bitcoin Support */}
               <Card className="p-10 md:p-12 bg-background/5 border-background/10 hover:border-background/20 hover:bg-background/8 hover:-translate-y-2 transition-all duration-[400ms] rounded-[20px] backdrop-blur-sm">

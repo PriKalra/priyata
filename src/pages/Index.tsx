@@ -107,16 +107,16 @@ const Index = () => {
         <CosmicFractalUniverse />
         
         <div className="relative z-10 max-w-[980px] mx-auto px-6 md:px-12">
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-light tracking-tight mb-12 text-foreground opacity-0 animate-fade-in-up animate-delay-200">
-            State of Being
-          </h1>
-          
-          <div className="flex flex-col items-center gap-6 mb-12 opacity-0 animate-fade-in-up animate-delay-400">
+          <div className="flex flex-col items-center gap-8 mb-12 opacity-0 animate-fade-in-up animate-delay-200">
             <FractalGlassCard>
-              Priyata
+              State of Being
             </FractalGlassCard>
             
-            <FractalGlassCard className="max-w-[500px]">
+            <p className="text-xl md:text-2xl font-light text-foreground/80 opacity-0 animate-fade-in-up animate-delay-300">
+              Priyata
+            </p>
+            
+            <FractalGlassCard className="max-w-[600px]">
               A real-time journey of an ordinary scientist who loves in-betweens
             </FractalGlassCard>
           </div>

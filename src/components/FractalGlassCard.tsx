@@ -31,17 +31,24 @@ const FractalGlassCard: React.FC<FractalGlassCardProps> = ({ children, className
       <style>{`
         .input__container {
           position: relative;
-          background: rgba(255, 255, 255, 0.664);
-          padding: 10px 15px;
+          background: rgba(255, 255, 255, 0.75);
+          backdrop-filter: blur(10px);
+          padding: 16px 24px;
           display: flex;
           justify-content: center;
           align-items: center;
-          gap: 5px;
-          border-radius: 22px;
-          transition: transform 400ms;
+          gap: 12px;
+          border-radius: 28px;
+          transition: transform 400ms, background 300ms;
           transform-style: preserve-3d;
-          transform: rotateX(15deg) rotateY(-20deg);
+          transform: rotateX(12deg) rotateY(-15deg);
           perspective: 500px;
+          box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        
+        .input__container:hover {
+          background: rgba(255, 255, 255, 0.85);
+          transform: rotateX(8deg) rotateY(-10deg) translateY(-2px);
         }
 
         .shadow__input {
@@ -72,12 +79,14 @@ const FractalGlassCard: React.FC<FractalGlassCardProps> = ({ children, className
           display: flex;
           justify-content: center;
           align-items: center;
-          border-radius: 12px;
-          padding: 5px;
+          border-radius: 14px;
+          padding: 8px;
+          color: #5a5a8f;
         }
 
         .input__button__shadow:hover {
-          background: rgba(255, 255, 255, 0.411);
+          background: rgba(255, 255, 255, 0.5);
+          transform: rotate(180deg);
         }
 
         .input__search {
@@ -85,12 +94,14 @@ const FractalGlassCard: React.FC<FractalGlassCardProps> = ({ children, className
           border-radius: 20px;
           outline: none;
           border: none;
-          padding: 8px;
+          padding: 4px 12px;
           position: relative;
           background: transparent;
           text-align: center;
-          font-weight: 500;
-          color: #1a1a1a;
+          font-weight: 600;
+          color: #2a2a3a;
+          font-size: 1.125rem;
+          letter-spacing: 0.02em;
         }
       `}</style>
     </div>

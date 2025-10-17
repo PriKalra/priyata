@@ -2,7 +2,7 @@ import { ExternalLink, Mic, Image as ImageIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import FractalCanvas from "@/components/FractalCanvas";
+import CosmicFractalUniverse from "@/components/CosmicFractalUniverse";
 
 const allContent = [
   {
@@ -103,7 +103,7 @@ const Index = () => {
       {/* Hero Section */}
       <header className="relative min-h-[85vh] flex flex-col justify-center items-center text-center overflow-hidden border-b border-border bg-gradient-to-b from-gray-50 via-background to-gray-50">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,hsl(var(--gray-50))_0%,hsl(var(--background))_40%,hsl(var(--gray-50))_100%)]" />
-        <FractalCanvas />
+        <CosmicFractalUniverse />
         
         <div className="relative z-10 max-w-[980px] mx-auto px-6 md:px-12">
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-light tracking-tight mb-6 text-foreground opacity-0 animate-fade-in-up animate-delay-200">

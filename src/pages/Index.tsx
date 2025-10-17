@@ -107,16 +107,16 @@ const Index = () => {
         <CosmicFractalUniverse />
         
         <div className="relative z-10 max-w-[980px] mx-auto px-6 md:px-12">
-          <div className="flex flex-col items-center gap-8 mb-12 opacity-0 animate-fade-in-up animate-delay-200">
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-light tracking-tight mb-12 text-foreground opacity-0 animate-fade-in-up animate-delay-200">
+            State of Being
+          </h1>
+          
+          <div className="flex flex-col items-center gap-6 mb-12 opacity-0 animate-fade-in-up animate-delay-400">
             <FractalGlassCard>
-              State of Being
+              Priyata
             </FractalGlassCard>
             
-            <p className="text-xl md:text-2xl font-light opacity-0 animate-fade-in-up animate-delay-300" style={{ color: '#c7d2fe', textShadow: '0 2px 12px rgba(139, 92, 246, 0.4)' }}>
-              Priyata
-            </p>
-            
-            <FractalGlassCard className="max-w-[600px]">
+            <FractalGlassCard className="max-w-[500px]">
               A real-time journey of an ordinary scientist who loves in-betweens
             </FractalGlassCard>
           </div>
@@ -126,8 +126,7 @@ const Index = () => {
               asChild
               size="lg"
               variant="outline"
-              className="rounded-full border-amber-400/40 bg-gradient-to-r from-amber-500/10 to-orange-500/10 text-amber-100 hover:bg-gradient-to-r hover:from-amber-500/30 hover:to-orange-500/30 hover:border-amber-400/60 hover:text-white backdrop-blur-sm transition-all duration-400 shadow-lg shadow-amber-500/20"
-              style={{ textShadow: '0 2px 8px rgba(251, 191, 36, 0.3)' }}
+              className="rounded-full border-border hover:bg-foreground hover:text-background transition-all duration-400"
             >
               <a href="https://twitter.com/DeliriusPri" target="_blank" rel="noopener noreferrer">
                 Twitter
@@ -137,8 +136,7 @@ const Index = () => {
               asChild
               size="lg"
               variant="outline"
-              className="rounded-full border-rose-400/40 bg-gradient-to-r from-rose-500/10 to-pink-500/10 text-rose-100 hover:bg-gradient-to-r hover:from-rose-500/30 hover:to-pink-500/30 hover:border-rose-400/60 hover:text-white backdrop-blur-sm transition-all duration-400 shadow-lg shadow-rose-500/20"
-              style={{ textShadow: '0 2px 8px rgba(244, 63, 94, 0.3)' }}
+              className="rounded-full border-border hover:bg-foreground hover:text-background transition-all duration-400"
             >
               <a href="https://world.hey.com/priyata" target="_blank" rel="noopener noreferrer">
                 Blog
@@ -148,8 +146,7 @@ const Index = () => {
               asChild
               size="lg"
               variant="outline"
-              className="rounded-full border-yellow-400/40 bg-gradient-to-r from-yellow-500/10 to-amber-500/10 text-yellow-100 hover:bg-gradient-to-r hover:from-yellow-500/30 hover:to-amber-500/30 hover:border-yellow-400/60 hover:text-white backdrop-blur-sm transition-all duration-400 shadow-lg shadow-yellow-500/20"
-              style={{ textShadow: '0 2px 8px rgba(234, 179, 8, 0.3)' }}
+              className="rounded-full border-border hover:bg-foreground hover:text-background transition-all duration-400"
             >
               <a href="https://buymeacoffee.com/priyata" target="_blank" rel="noopener noreferrer">
                 Buy Me a Coffee
@@ -159,8 +156,7 @@ const Index = () => {
               asChild
               size="lg"
               variant="outline"
-              className="rounded-full border-orange-400/40 bg-gradient-to-r from-orange-500/10 to-red-500/10 text-orange-100 hover:bg-gradient-to-r hover:from-orange-500/30 hover:to-red-500/30 hover:border-orange-400/60 hover:text-white backdrop-blur-sm transition-all duration-400 shadow-lg shadow-orange-500/20"
-              style={{ textShadow: '0 2px 8px rgba(249, 115, 22, 0.3)' }}
+              className="rounded-full border-border hover:bg-foreground hover:text-background transition-all duration-400"
             >
               <a href="#support">
                 Support

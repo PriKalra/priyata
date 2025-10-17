@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import CosmicFractalUniverse from "@/components/CosmicFractalUniverse";
+import FractalGlassCard from "@/components/FractalGlassCard";
 
 const allContent = [
   {
@@ -106,15 +107,19 @@ const Index = () => {
         <CosmicFractalUniverse />
         
         <div className="relative z-10 max-w-[980px] mx-auto px-6 md:px-12">
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-light tracking-tight mb-6 text-foreground opacity-0 animate-fade-in-up animate-delay-200">
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-light tracking-tight mb-12 text-foreground opacity-0 animate-fade-in-up animate-delay-200">
             State of Being
           </h1>
-          <p className="text-xl md:text-2xl lg:text-3xl mb-8 font-normal text-muted-foreground opacity-0 animate-fade-in-up animate-delay-400">
-            Priyata
-          </p>
-          <p className="text-base md:text-lg lg:text-xl text-muted-foreground max-w-[720px] mx-auto leading-relaxed mb-12 opacity-0 animate-fade-in-up animate-delay-600">
-            A real-time journey of an ordinary scientist who loves philosophy and product
-          </p>
+          
+          <div className="flex flex-col items-center gap-6 mb-12 opacity-0 animate-fade-in-up animate-delay-400">
+            <FractalGlassCard>
+              Priyata
+            </FractalGlassCard>
+            
+            <FractalGlassCard className="max-w-[500px]">
+              A real-time journey of an ordinary scientist who loves in-betweens
+            </FractalGlassCard>
+          </div>
           
           <div className="flex flex-wrap gap-4 justify-center items-center opacity-0 animate-fade-in-up animate-delay-800">
             <Button 

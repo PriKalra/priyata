@@ -31,23 +31,25 @@ const FractalGlassCard: React.FC<FractalGlassCardProps> = ({ children, className
       <style>{`
         .input__container {
           position: relative;
-          background: rgba(255, 255, 255, 0.75);
-          backdrop-filter: blur(10px);
+          background: rgba(153, 156, 255, 0.15);
+          backdrop-filter: blur(20px);
           padding: 16px 24px;
           display: flex;
           justify-content: center;
           align-items: center;
           gap: 12px;
           border-radius: 28px;
-          transition: transform 400ms, background 300ms;
+          border: 1px solid rgba(180, 190, 255, 0.3);
+          transition: transform 400ms, background 300ms, border 300ms;
           transform-style: preserve-3d;
           transform: rotateX(12deg) rotateY(-15deg);
           perspective: 500px;
-          box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 8px 32px rgba(153, 156, 255, 0.2);
         }
         
         .input__container:hover {
-          background: rgba(255, 255, 255, 0.85);
+          background: rgba(153, 156, 255, 0.25);
+          border: 1px solid rgba(180, 190, 255, 0.5);
           transform: rotateX(8deg) rotateY(-10deg) translateY(-2px);
         }
 
@@ -59,16 +61,16 @@ const FractalGlassCard: React.FC<FractalGlassCardProps> = ({ children, className
           left: 0;
           bottom: 0;
           z-index: -1;
-          filter: blur(30px);
+          filter: blur(40px);
           border-radius: 20px;
-          background-color: #999cff;
-          background-image: radial-gradient(at 85% 51%, hsla(60,60%,61%,1) 0px, transparent 50%),
-            radial-gradient(at 74% 68%, hsla(235,69%,77%,1) 0px, transparent 50%),
-            radial-gradient(at 64% 79%, hsla(284,72%,73%,1) 0px, transparent 50%),
-            radial-gradient(at 75% 16%, hsla(283,60%,72%,1) 0px, transparent 50%),
-            radial-gradient(at 90% 65%, hsla(153,70%,64%,1) 0px, transparent 50%),
-            radial-gradient(at 91% 83%, hsla(283,74%,69%,1) 0px, transparent 50%),
-            radial-gradient(at 72% 91%, hsla(213,75%,75%,1) 0px, transparent 50%);
+          background-color: #6366f1;
+          background-image: radial-gradient(at 85% 51%, hsla(220,90%,65%,0.8) 0px, transparent 50%),
+            radial-gradient(at 74% 68%, hsla(235,80%,70%,0.7) 0px, transparent 50%),
+            radial-gradient(at 64% 79%, hsla(284,75%,68%,0.7) 0px, transparent 50%),
+            radial-gradient(at 75% 16%, hsla(200,70%,65%,0.6) 0px, transparent 50%),
+            radial-gradient(at 90% 65%, hsla(180,75%,60%,0.5) 0px, transparent 50%),
+            radial-gradient(at 91% 83%, hsla(260,70%,65%,0.6) 0px, transparent 50%),
+            radial-gradient(at 72% 91%, hsla(210,80%,70%,0.7) 0px, transparent 50%);
         }
 
         .input__button__shadow {
@@ -81,11 +83,11 @@ const FractalGlassCard: React.FC<FractalGlassCardProps> = ({ children, className
           align-items: center;
           border-radius: 14px;
           padding: 8px;
-          color: #5a5a8f;
+          color: #a5b4fc;
         }
 
         .input__button__shadow:hover {
-          background: rgba(255, 255, 255, 0.5);
+          background: rgba(180, 190, 255, 0.3);
           transform: rotate(180deg);
         }
 
@@ -99,9 +101,10 @@ const FractalGlassCard: React.FC<FractalGlassCardProps> = ({ children, className
           background: transparent;
           text-align: center;
           font-weight: 600;
-          color: #2a2a3a;
+          color: #e0e7ff;
           font-size: 1.125rem;
           letter-spacing: 0.02em;
+          text-shadow: 0 2px 8px rgba(99, 102, 241, 0.5);
         }
       `}</style>
     </div>

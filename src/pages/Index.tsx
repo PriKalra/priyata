@@ -115,7 +115,7 @@ const Index = () => {
         <CosmicFractalUniverse />
         
         <div className="relative z-10 max-w-[980px] mx-auto px-6 md:px-12">
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-light tracking-tight mb-12 text-foreground opacity-0 animate-fade-in-up animate-delay-200">
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-light tracking-tight mb-12 text-white opacity-0 animate-fade-in-up animate-delay-200">
             State of Being
           </h1>
           

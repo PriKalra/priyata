@@ -40,7 +40,6 @@ const FractalGlassCard: React.FC<FractalGlassCardProps> = ({ children, className
           border-radius: 22px;
           transition: transform 400ms;
           transform-style: preserve-3d;
-          transform: rotateX(15deg) rotateY(-20deg);
           perspective: 500px;
         }
 

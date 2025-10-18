@@ -4,7 +4,6 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import CosmicFractalUniverse from "@/components/CosmicFractalUniverse";
 import FractalGlassCard from "@/components/FractalGlassCard";
-import BitcoinCoin from "@/components/BitcoinCoin";
 import ContentCard from "@/components/ContentCard";
 import BuyMeACoffeeModal from "@/components/BuyMeACoffeeModal";
 
@@ -125,7 +124,7 @@ const Index = () => {
             </FractalGlassCard>
             
             <FractalGlassCard className="max-w-[500px]">
-              A real-time journey of an ordinary scientist who loves in-betweens
+              Scientist •Poet• Explorer of In-Betweens• Seeker
             </FractalGlassCard>
           </div>
           
@@ -236,7 +235,6 @@ const Index = () => {
               {/* Bitcoin Support */}
               <Card className="p-10 md:p-12 bg-background/5 border-background/10 hover:border-background/20 hover:bg-background/8 hover:-translate-y-2 transition-all duration-[400ms] rounded-[20px] backdrop-blur-sm">
                 <h3 className="text-2xl font-normal mb-4 text-background">₿ Bitcoin</h3>
-                <BitcoinCoin />
                 <p className="text-sm text-background/70 mb-6 leading-relaxed">
                   Direct, decentralized support for independent research
                 </p>

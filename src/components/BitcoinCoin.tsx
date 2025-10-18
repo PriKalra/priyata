@@ -1,6 +1,6 @@
 const BitcoinCoin = () => {
   return (
-    <div className="relative w-24 h-24 mx-auto my-6">
+    <div className="relative w-16 h-16 mx-auto my-4">
       <style>
         {`
           @keyframes rotate-coin {
@@ -10,7 +10,7 @@ const BitcoinCoin = () => {
           }
 
           .bitcoin-coin {
-            font-size: 96px;
+            font-size: 64px;
             width: 0.1em;
             height: 1em;
             background: linear-gradient(#faa504, #141001);

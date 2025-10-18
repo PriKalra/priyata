@@ -1,10 +1,12 @@
-import { ExternalLink, Mic, Image as ImageIcon } from "lucide-react";
+import { useState } from "react";
+import { ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import CosmicFractalUniverse from "@/components/CosmicFractalUniverse";
 import FractalGlassCard from "@/components/FractalGlassCard";
 import BitcoinCoin from "@/components/BitcoinCoin";
+import ContentCard from "@/components/ContentCard";
+import BuyMeACoffeeModal from "@/components/BuyMeACoffeeModal";
 
 const allContent = [
   {
@@ -23,6 +25,7 @@ const allContent = [
     link: "https://buymeacoffee.com/priyata/paper2agent-reimagining-research-papers-as-interactive-reliable-ai-agents",
     source: "Buy Me a Coffee",
     audioLength: "34:00",
+    audioUrl: "https://cdn.buymeacoffee.com/uploads/project_updates/2025/10/30d206c46073aac17f7c86b0e3c17b45.mp3",
     image: "https://cdn.buymeacoffee.com/uploads/project_updates/2025/10/30d206c46073aac17f7c86b0e3c17b45.jpg",
     date: "2025-10-06",
     views: 54,
@@ -44,6 +47,7 @@ const allContent = [
     link: "https://buymeacoffee.com/priyata/large-language-models-data-extraction-toxicology-implications-lessons-learned",
     source: "Buy Me a Coffee",
     audioLength: "18:54",
+    audioUrl: "https://cdn.buymeacoffee.com/uploads/project_updates/2025/09/203b4664c1490ef46d800870a959b3c5.mp3",
     image: "https://cdn.buymeacoffee.com/uploads/project_updates/2025/09/203b4664c1490ef46d800870a959b3c5.jpg",
     date: "2025-09-09",
     views: 84,
@@ -74,6 +78,7 @@ const allContent = [
     link: "https://buymeacoffee.com/priyata/machine-learning-automation-pkpd-modelling",
     source: "Buy Me a Coffee",
     audioLength: "20:09",
+    audioUrl: "https://cdn.buymeacoffee.com/uploads/project_updates/2025/08/4a7ec3e8b391f35c0a4ded98a734b078.mp3",
     image: "https://cdn.buymeacoffee.com/uploads/project_updates/2025/08/4a7ec3e8b391f35c0a4ded98a734b078.jpg",
     date: "2025-08-07",
     views: 148,
@@ -100,6 +105,8 @@ const allContent = [
 ].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
 const Index = () => {
+  const [showBMCModal, setShowBMCModal] = useState(false);
+
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
@@ -194,75 +201,9 @@ const Index = () => {
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 max-w-[1400px] mx-auto auto-rows-[240px]">
-          {allContent.map((item, index) => {
-            const sizeClasses = {
-              large: "md:col-span-2 md:row-span-2",
-              medium: "md:col-span-2",
-              small: "md:col-span-1"
-            };
-
-            return (
-              <Card
-                key={index}
-                className={`group relative p-6 md:p-8 bg-card border-border hover:border-gray-400 transition-all duration-[400ms] hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] hover:-translate-y-1 cursor-pointer overflow-hidden rounded-2xl before:absolute before:top-0 before:left-0 before:right-0 before:h-[3px] before:bg-foreground before:scale-x-0 before:origin-left before:transition-transform before:duration-400 hover:before:scale-x-100 ${sizeClasses[item.size as keyof typeof sizeClasses]}`}
-              >
-                <a
-                  href={item.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block h-full flex flex-col"
-                >
-                  {/* Background Image for Audio/Image Posts */}
-                  {item.type === "audio" && item.image && (
-                    <div 
-                      className="absolute inset-0 bg-cover bg-center opacity-10 group-hover:opacity-15 transition-opacity duration-300 grayscale"
-                      style={{ backgroundImage: `url(${item.image})` }}
-                    />
-                  )}
-                  
-                  <div className="relative flex flex-col h-full">
-                    {/* Header */}
-                    <div className="flex items-center justify-between mb-2">
-                      <Badge variant="secondary" className="text-xs font-normal bg-secondary/30">
-                        {item.source}
-                      </Badge>
-                      {item.type === "audio" && (
-                        <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
-                          <Mic className="h-3.5 w-3.5" />
-                          <span>{item.audioLength}</span>
-                        </div>
-                      )}
-                      {item.type === "image" && (
-                        <ImageIcon className="h-3.5 w-3.5 text-muted-foreground" />
-                      )}
-                    </div>
-
-                    {/* Content */}
-                    <h3 className="text-lg font-semibold mb-2 group-hover:text-foreground/90 transition-colors line-clamp-3">
-                      {item.title}
-                    </h3>
-                    
-                    <p className={`text-muted-foreground text-sm mb-3 flex-grow ${item.size === 'large' ? 'line-clamp-4' : 'line-clamp-2'}`}>
-                      {item.excerpt}
-                    </p>
-
-                    {/* Footer */}
-                    <div className="flex items-center justify-between mt-auto">
-                      <div className="flex items-center text-foreground/70 text-xs group-hover:gap-1.5 gap-1 transition-all">
-                        {item.type === "audio" ? "Listen" : "Read"}
-                        <ExternalLink className="h-3.5 w-3.5 group-hover:translate-x-0.5 transition-transform" />
-                      </div>
-                      {item.views && (
-                        <span className="text-xs text-muted-foreground/70">
-                          {item.views} views
-                        </span>
-                      )}
-                    </div>
-                  </div>
-                </a>
-              </Card>
-            );
-          })}
+          {allContent.map((item, index) => (
+            <ContentCard key={index} item={item} />
+          ))}
         </div>
 
         <div className="text-center mt-10 flex gap-3 justify-center">
@@ -277,14 +218,12 @@ const Index = () => {
             </a>
           </Button>
           <Button 
-            asChild
             size="default"
             variant="outline"
             className="text-sm"
+            onClick={() => setShowBMCModal(true)}
           >
-            <a href="https://buymeacoffee.com/priyata/posts" target="_blank" rel="noopener noreferrer">
-              All Audio Posts <ExternalLink className="ml-2 h-4 w-4" />
-            </a>
+            All Audio Posts <ExternalLink className="ml-2 h-4 w-4" />
           </Button>
         </div>
       </section>
@@ -359,9 +298,12 @@ const Index = () => {
             <a href="https://world.hey.com/priyata" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors">
               Blog
             </a>
-            <a href="https://buymeacoffee.com/priyata" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors">
-              Buy Me a Coffee
-            </a>
+            <button 
+              onClick={() => setShowBMCModal(true)}
+              className="text-muted-foreground hover:text-foreground transition-colors"
+            >
+              Audio Posts
+            </button>
             <a href="https://twitter.com/DeliriusPri" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors">
               Twitter
             </a>
@@ -377,6 +319,9 @@ const Index = () => {
           </p>
         </div>
       </footer>
+
+      {/* Buy Me a Coffee Modal */}
+      <BuyMeACoffeeModal isOpen={showBMCModal} onClose={() => setShowBMCModal(false)} />
     </div>
   );
 };

@@ -17,39 +17,26 @@ const CosmicFractalUniverse = () => {
     canvas.width = width;
     canvas.height = height;
 
-    // Fractal star clusters
-    const starClusters = [];
-    const numClusters = 8;
-    
-    for (let i = 0; i < numClusters; i++) {
-      starClusters.push({
-        x: Math.random() * width,
-        y: Math.random() * height,
-        size: 50 + Math.random() * 150,
-        rotation: Math.random() * Math.PI * 2,
-        rotationSpeed: (Math.random() - 0.5) * 0.001,
-        depth: Math.random(),
-        hue: Math.random() * 60 + 180, // Blue to cyan range
-      });
-    }
+    const starClusters = Array.from({ length: 6 }, () => ({
+      x: Math.random() * width,
+      y: Math.random() * height,
+      size: 50 + Math.random() * 150,
+      rotation: Math.random() * Math.PI * 2,
+      rotationSpeed: (Math.random() - 0.5) * 0.001,
+      hue: Math.random() * 60 + 180,
+    }));
 
-    // Mandelbrot-inspired particles
-    const particles = [];
-    const numParticles = 300;
-    
-    for (let i = 0; i < numParticles; i++) {
-      particles.push({
-        x: Math.random() * width,
-        y: Math.random() * height,
-        size: Math.random() * 3 + 1,
-        vx: (Math.random() - 0.5) * 0.3,
-        vy: (Math.random() - 0.5) * 0.3,
-        hue: Math.random() * 360,
-        alpha: Math.random() * 0.5 + 0.3,
-        pulsePhase: Math.random() * Math.PI * 2,
-        pulseSpeed: Math.random() * 0.02 + 0.01,
-      });
-    }
+    const particles = Array.from({ length: 200 }, () => ({
+      x: Math.random() * width,
+      y: Math.random() * height,
+      size: Math.random() * 2.5 + 0.5,
+      vx: (Math.random() - 0.5) * 0.2,
+      vy: (Math.random() - 0.5) * 0.2,
+      hue: Math.random() * 360,
+      alpha: Math.random() * 0.4 + 0.2,
+      pulsePhase: Math.random() * Math.PI * 2,
+      pulseSpeed: Math.random() * 0.015 + 0.008,
+    }));
 
     // Draw a fractal branch (recursive)
     const drawFractalBranch = (x: number, y: number, length: number, angle: number, depth: number, hue: number) => {
@@ -59,28 +46,27 @@ const CosmicFractalUniverse = () => {
       const endY = y + Math.sin(angle) * length;
 
       const gradient = ctx.createLinearGradient(x, y, endX, endY);
-      gradient.addColorStop(0, `hsla(${hue}, 80%, 60%, 0.3)`);
-      gradient.addColorStop(1, `hsla(${hue + 30}, 90%, 70%, 0.6)`);
+      gradient.addColorStop(0, `hsla(${hue}, 70%, 55%, 0.25)`);
+      gradient.addColorStop(1, `hsla(${hue + 30}, 80%, 65%, 0.4)`);
 
       ctx.strokeStyle = gradient;
-      ctx.lineWidth = depth * 0.5;
+      ctx.lineWidth = depth * 0.4;
       ctx.beginPath();
       ctx.moveTo(x, y);
       ctx.lineTo(endX, endY);
       ctx.stroke();
 
-      // Recursive branches
-      const newLength = length * 0.7;
-      const angleOffset = Math.PI / 6;
+      const newLength = length * 0.68;
+      const angleOffset = Math.PI / 6.5;
       
-      drawFractalBranch(endX, endY, newLength, angle - angleOffset, depth - 1, hue + 10);
-      drawFractalBranch(endX, endY, newLength, angle + angleOffset, depth - 1, hue + 10);
+      drawFractalBranch(endX, endY, newLength, angle - angleOffset, depth - 1, hue + 12);
+      drawFractalBranch(endX, endY, newLength, angle + angleOffset, depth - 1, hue + 12);
     };
 
     // Draw spiral galaxy pattern
     const drawSpiralGalaxy = (cx: number, cy: number, size: number, rotation: number, hue: number) => {
-      const arms = 5;
-      const pointsPerArm = 50;
+      const arms = 4;
+      const pointsPerArm = 40;
       
       for (let arm = 0; arm < arms; arm++) {
         const armAngle = (arm / arms) * Math.PI * 2 + rotation;
@@ -88,22 +74,21 @@ const CosmicFractalUniverse = () => {
         for (let i = 0; i < pointsPerArm; i++) {
           const t = i / pointsPerArm;
           const distance = t * size;
-          const angle = armAngle + t * Math.PI * 4;
+          const angle = armAngle + t * Math.PI * 3.5;
           
           const x = cx + Math.cos(angle) * distance;
           const y = cy + Math.sin(angle) * distance;
           
-          const particleSize = (1 - t) * 3 + 0.5;
-          const alpha = (1 - t) * 0.6;
+          const particleSize = (1 - t) * 2.5 + 0.4;
+          const alpha = (1 - t) * 0.5;
           
-          ctx.fillStyle = `hsla(${hue + t * 40}, 80%, ${60 + t * 20}%, ${alpha})`;
+          ctx.fillStyle = `hsla(${hue + t * 35}, 75%, ${58 + t * 18}%, ${alpha})`;
           ctx.beginPath();
           ctx.arc(x, y, particleSize, 0, Math.PI * 2);
           ctx.fill();
           
-          // Add glow
-          ctx.shadowBlur = 10;
-          ctx.shadowColor = `hsla(${hue}, 100%, 70%, ${alpha * 0.5})`;
+          ctx.shadowBlur = 8;
+          ctx.shadowColor = `hsla(${hue}, 95%, 68%, ${alpha * 0.4})`;
           ctx.fill();
           ctx.shadowBlur = 0;
         }
@@ -117,81 +102,59 @@ const CosmicFractalUniverse = () => {
     const animate = () => {
       // Create deep space background with gradient
       const bgGradient = ctx.createRadialGradient(width / 2, height / 2, 0, width / 2, height / 2, width);
-      bgGradient.addColorStop(0, '#0a0a1f');
-      bgGradient.addColorStop(0.5, '#050510');
-      bgGradient.addColorStop(1, '#000005');
+      bgGradient.addColorStop(0, '#0d0d20');
+      bgGradient.addColorStop(0.5, '#080812');
+      bgGradient.addColorStop(1, '#020206');
       ctx.fillStyle = bgGradient;
       ctx.fillRect(0, 0, width, height);
 
       frame++;
 
-      // Draw cosmic nebula effect
-      for (let i = 0; i < 5; i++) {
-        const x = width / 2 + Math.sin(frame * 0.001 + i) * 300;
-        const y = height / 2 + Math.cos(frame * 0.001 + i) * 200;
-        const gradient = ctx.createRadialGradient(x, y, 0, x, y, 200);
-        gradient.addColorStop(0, `hsla(${200 + i * 30}, 70%, 40%, 0.05)`);
+      for (let i = 0; i < 4; i++) {
+        const x = width / 2 + Math.sin(frame * 0.0008 + i) * 280;
+        const y = height / 2 + Math.cos(frame * 0.0008 + i) * 180;
+        const gradient = ctx.createRadialGradient(x, y, 0, x, y, 180);
+        gradient.addColorStop(0, `hsla(${210 + i * 28}, 65%, 38%, 0.04)`);
         gradient.addColorStop(1, 'transparent');
         ctx.fillStyle = gradient;
         ctx.fillRect(0, 0, width, height);
       }
 
-      // Update and draw star clusters
       starClusters.forEach((cluster, idx) => {
         cluster.rotation += cluster.rotationSpeed;
+        const pulse = Math.sin(frame * 0.018 + idx) * 0.25 + 1;
         
-        // Pulsing effect
-        const pulse = Math.sin(frame * 0.02 + idx) * 0.3 + 1;
-        
-        drawSpiralGalaxy(
-          cluster.x,
-          cluster.y,
-          cluster.size * pulse,
-          cluster.rotation,
-          cluster.hue
-        );
+        drawSpiralGalaxy(cluster.x, cluster.y, cluster.size * pulse, cluster.rotation, cluster.hue);
 
-        // Draw fractal branches from cluster center
         if (idx % 2 === 0) {
-          for (let i = 0; i < 6; i++) {
-            const angle = (i / 6) * Math.PI * 2 + cluster.rotation;
-            drawFractalBranch(
-              cluster.x,
-              cluster.y,
-              40,
-              angle,
-              4,
-              cluster.hue
-            );
+          for (let i = 0; i < 5; i++) {
+            const angle = (i / 5) * Math.PI * 2 + cluster.rotation;
+            drawFractalBranch(cluster.x, cluster.y, 35, angle, 3, cluster.hue);
           }
         }
       });
 
-      // Update and draw particles
       particles.forEach((p) => {
         p.x += p.vx;
         p.y += p.vy;
         p.pulsePhase += p.pulseSpeed;
 
-        // Wrap around screen
         if (p.x < 0) p.x = width;
         if (p.x > width) p.x = 0;
         if (p.y < 0) p.y = height;
         if (p.y > height) p.y = 0;
 
-        // Pulsing size and alpha
-        const pulse = Math.sin(p.pulsePhase) * 0.5 + 0.5;
-        const currentSize = p.size * (0.5 + pulse);
-        const currentAlpha = p.alpha * (0.5 + pulse);
+        const pulse = Math.sin(p.pulsePhase) * 0.4 + 0.6;
+        const currentSize = p.size * pulse;
+        const currentAlpha = p.alpha * pulse;
 
-        ctx.fillStyle = `hsla(${p.hue}, 100%, 70%, ${currentAlpha})`;
+        ctx.fillStyle = `hsla(${p.hue}, 90%, 65%, ${currentAlpha})`;
         ctx.beginPath();
         ctx.arc(p.x, p.y, currentSize, 0, Math.PI * 2);
         ctx.fill();
 
-        // Glow effect
-        ctx.shadowBlur = 15;
-        ctx.shadowColor = `hsla(${p.hue}, 100%, 60%, ${currentAlpha})`;
+        ctx.shadowBlur = 12;
+        ctx.shadowColor = `hsla(${p.hue}, 95%, 60%, ${currentAlpha * 0.6})`;
         ctx.fill();
         ctx.shadowBlur = 0;
       });
